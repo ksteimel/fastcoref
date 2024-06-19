@@ -116,6 +116,10 @@ class FastCorefResolver:
         identifying whether candidate spans for replacing other spans are nominal.
         This method is for determining whether the thing being replaced is also nominal so
         in this case, pronouns are included.
+
+        :param doc: Doc
+        :param coref: Tuple
+        :return: a boolean value representing whether coref contains a word with a nominal POS tag.
         """
         coref_span = doc.char_span(coref[0], coref[1])
         coref_pos = set([token.pos_ for token in coref_span])
